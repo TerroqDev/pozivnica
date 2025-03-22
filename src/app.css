@@ -1,0 +1,21 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Monsieur+La+Doulaise&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+@theme {
+	--font-noto: 'Noto Serif', serif;
+	--font-roboto: 'Roboto', sans-serif;
+	--font-lavishly: 'Lavishly Yours', cursive;
+}
+
+@font-face {
+	font-family: 'Brittany Signature'; /* Use the same name as in Tailwind config */
+	src: local('Brittany Signature'), local('Brittany Signature');
+	font-weight: normal;
+	font-style: normal;
+}
