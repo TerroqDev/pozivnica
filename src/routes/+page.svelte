@@ -18,6 +18,26 @@
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
 	let datum;
+	/**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
+    let firstLeftDivider;
+	/**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
+    let firstRightDivider;
+	/**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
+    let okupljanje;
+	/**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
+    let vjencanje;
+	/**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
+    let sala;
 
 	onMount(() => {
 		inView(marija, () => {
@@ -39,16 +59,51 @@
 				{ duration: 2, easing: 'ease-in', delay: 1 }
 			);
 		});
+        
+        inView(firstLeftDivider, () => {
+            animate(firstLeftDivider, 
+                { scaleX: [0, 1] },
+                { duration: 1.3, easing: 'ease-in'}
+            )
+        });
+
+        inView(firstRightDivider, () => {
+            animate(firstRightDivider, 
+                { scaleX: [0, 1] },
+                { duration: 1.3, easing: 'ease-in'}
+            )
+        });
+
+        inView(okupljanje, () => {
+            animate(okupljanje,
+                { opacity: [0, 1], x: [-100, 0] },
+                { duration: 1, easing: 'ease-in'}
+            );
+        })
+
+        inView(vjencanje, () => {
+            animate(vjencanje,
+                { opacity: [0, 1], x: [100, 0] },
+                { duration: 1, easing: 'ease-in'}
+            );
+        })
+
+        inView(sala, () => {
+            animate(sala,
+                { opacity: [0, 1], x: [-100, 0] },
+                { duration: 1, easing: 'ease-in'}
+            );
+        })
 	});
 </script>
 
 <div
-	class="relative flex min-h-screen flex-col bg-[url('https://images.unsplash.com/photo-1570579984759-0915125b99bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-fixed"
+  class="relative flex min-h-screen flex-col bg-[url('https://images.unsplash.com/photo-1570579984759-0915125b99bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-fixed bg-center bg-cover"
 >
-	<div class="fixed ml-8 mt-16 flex h-fit pt-8 font-noto text-9xl text-gray-50">
-		<h1 class="flex-wrap border-r-2 border-gray-50 pb-2 pr-4">M</h1>
-		<h1 class="pb-2 pl-4">V</h1>
-	</div>
+<div class="sticky top-12 ml-8 z-20 bg-transparent flex pt-8 font-noto text-6xl text-gray-50">
+    <h1 class="flex-wrap border-r-2 border-gray-50 pb-2 pr-4">M</h1>
+    <h1 class="pb-2 pl-4">V</h1>
+  </div>
 </div>
 
 <div class="text-center font-noto text-2xl text-gray-600 md:text-4xl">
@@ -57,7 +112,7 @@
 	<h1 bind:this={valentin} class="uppercase tracking-widest">Valentin Vareskic</h1>
 	<h1 bind:this={datum} class="pt-4 uppercase">26. Rujan 2025.</h1>
 	<div class="flex items-center justify-center gap-2 pb-8 pt-16">
-		<div class="h-[0.8px] w-20 bg-gray-600"></div>
+		<div bind:this={firstLeftDivider} class="h-[0.8px] w-20 bg-gray-600 origin-right"></div>
 		<div class="">
 			<svg
 				width="17.5"
@@ -80,23 +135,27 @@
 				/>
 			</svg>
 		</div>
-		<div class="h-[0.8px] w-20 bg-gray-600"></div>
+		<div bind:this={firstRightDivider} class="h-[0.8px] w-20 bg-gray-600 origin-left"></div>
 	</div>
 </div>
 
-<div class="text-center text-xl text-gray-600 md:text-4xl">
+<div class="text-center text-lg text-gray-600 md:text-4xl px-4">
+    <div bind:this={okupljanje}>
 	<h1 class="pt-4 font-lavishly text-4xl tracking-wider">okupljanje u 16 : 30</h1>
-	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode</h1>
-
-	<h1 class="pt-8 font-lavishly text-4xl tracking-wider">vjencanje u 17 : 00</h1>
-	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode</h1>
-
-	<h1 class="pt-8 font-lavishly text-4xl tracking-wider">svecana vecera u 19 : 00</h1>
-	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Mansion sala za vjencanja</h1>
+	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
+    </div>
+    <div bind:this={vjencanje}>
+	<h1 class="pt-16 font-lavishly text-4xl tracking-wider">vjencanje u 17 : 00</h1>
+	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
+    </div>
+    <div bind:this={sala}>
+	<h1 class="pt-16 font-lavishly text-4xl tracking-wider">svecana vecera u 19 : 00</h1>
+	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Mansion sala za vjencanja, Zagreb</h1>
+    </div>
 </div>
 
 <div class="flex items-center justify-center gap-2 pb-8 pt-16">
-	<div class="h-[0.8px] w-20 bg-gray-600"></div>
+	<div class="h-[0.8px] w-20 bg-gray-600 origin-right"></div>
 	<div class="">
 		<svg
 			width="17.5"
