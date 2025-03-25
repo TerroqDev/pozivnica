@@ -236,28 +236,56 @@
 		</div>
 	</div>
 </div>
+
+<div class="flex items-center justify-center gap-2 pb-8 pt-16">
+	<div bind:this={firstLeftDivider} class="h-[0.8px] w-20 origin-right bg-gray-600"></div>
+	<div class="">
+		<svg
+			width="17.5"
+			height="19.25"
+			viewBox="0 0 70 77"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M34.6031 31.0001C32.1092 18.6496 29.407 4.46732 14.6031 2C6.76537 0.693718 2.66023 6.00006 1.16022 12.5001C-1.33977 36.0001 26.1031 66.0001 35.6031 75.5001"
+				stroke="black"
+				stroke-width="1.9"
+				stroke-linecap="round"
+			/>
+			<path
+				d="M34.6031 31.0349C37.0969 18.6844 39.9963 3.65921 54.8002 1.19189C62.6379 -0.114395 66.7273 5.44354 68.2274 11.9436C70.7273 35.4436 45.1031 66 35.603 75.5"
+				stroke="black"
+				stroke-width="1.9"
+				stroke-linecap="round"
+			/>
+		</svg>
+	</div>
+	<div bind:this={firstRightDivider} class="h-[0.8px] w-20 origin-left bg-gray-600"></div>
+</div>
+
 <div class="flex flex-col px-8 pt-8">
 	<label for="ime" class="text-gray-700">Ime</label>
 	<input
 		type="text"
 		id="ime"
 		name="ime"
-		class="border-0 border-b-2 font-noto text-gray-600 focus:ring-0"
+		class="border-0 border-b-2 font-noto text-gray-600 px-0 focus:ring-0"
 	/>
-	<label for="prezime" class="pt-2 text-gray-700">Prezime</label>
+	<label for="prezime" class="pt-4 text-gray-700">Prezime</label>
 	<input
 		type="text"
 		id="prezime"
 		name="prezime"
-		class="border-0 border-b-2 font-noto text-gray-600 focus:ring-0"
+		class="border-0 border-b-2 font-noto text-gray-600 px-0 focus:ring-0"
 	/>
-	<label for="dolazak" class="pt-2 text-gray-700">Potvrda dolaska</label>
+	<label for="dolazak" class="pt-4 text-gray-700">Potvrda dolaska</label>
 	<select id="dolazak" class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0">
 		<option selected>Odaberite</option>
 		<option value="da">Da</option>
 		<option value="ne">Na</option>
 	</select>
-	<label for="brojgostiju" class="pt-2 text-gray-700">Broj gostiju</label>
+	<label for="brojgostiju" class="pt-4 text-gray-700">Broj gostiju</label>
 	<select id="brojgostiju" class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0">
 		<option selected>Odaberite</option>
 		<option value="1">1</option>
@@ -268,8 +296,18 @@
 		<option value="6">6</option>
 		<option value="7">7</option>
 	</select>
+	<label for="poruka" class="pt-4 text-gray-700">Poruka</label>
+	<textarea
+		id="poruka"
+		name="poruka"
+        rows="3"
+		class="border-0 border-b-2 font-noto text-gray-600 focus:ring-0 px-0"
+	></textarea>
+    <div class="flex justify-center pt-8">
+        <button class="border-2 border-gray-600 uppercase text-gray-700 px-4 py-2 font-semibold font-noto text-xl tracking-widest">Posalji</button>
+    </div>
 </div>
 
-<div class="px-8 py-8 text-center text-xl font-bold text-gray-600">
+<div class="px-8 py-8 text-center text-xl font-extrabold text-gray-600">
 	<h1>Veselimo se vasem dolasku!</h1>
 </div>
