@@ -1,9 +1,14 @@
 <script>
 	import { animate, inView } from 'motion';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import Divider from '../components/Divider.svelte';
 	import Form from '../components/Form.svelte';
 	import ContactHandle from '../components/ContactHandle.svelte';
+
+    let topBorder = false;
+    function handleTopBorder() {
+        topBorder = window.scrollY>window.innerHeight;
+    }
 
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
@@ -39,6 +44,8 @@
 	 */
 	let datumDan;
 	onMount(() => {
+        window.addEventListener("scroll", handleTopBorder);
+
 		inView(marija, () => {
 			animate(marija, { opacity: [0, 100], y: [100, 0] }, { duration: 2, easing: 'ease-in' });
 		});
@@ -76,11 +83,15 @@
 			});
 		});
 	});
+
+    onDestroy(() => {
+        removeEventListener("scroll", handleTopBorder);
+    })
 </script>
 
 
 <div class="bg-transparent">
-	<div
+	<div class:h-0={topBorder}
 		class="fixed top-0 z-10 h-4 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
 	></div>
 </div>
