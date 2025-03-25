@@ -87,7 +87,13 @@
 	</div>
 </div>
 
-<div class="text-center font-noto text-2xl text-gray-600 md:text-4xl">
+<div class="relative -mt-16 bg-transparent">
+	<div
+		class="h-16 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%284%29-junRLKTvpDBwHpNHTxLavxctPsMbOt.png')] bg-cover"
+	></div>
+</div>
+
+<div class="bg-transparent text-center font-noto text-2xl text-gray-600 md:text-4xl">
 	<h1 bind:this={marija} class="pt-8 font-bold uppercase tracking-widest">Marija Matijevic</h1>
 	<h1 bind:this={and} class="py-2 font-lavishly text-5xl">and</h1>
 	<h1 bind:this={valentin} class="font-bold uppercase tracking-widest">Valentin Vareskic</h1>
