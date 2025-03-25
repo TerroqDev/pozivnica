@@ -6,9 +6,6 @@
 	import ContactHandle from '../components/ContactHandle.svelte';
 
 	let topBorder = false;
-	function handleTopBorder() {
-		topBorder = window.scrollY > window.innerHeight;
-	}
 
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
@@ -44,6 +41,10 @@
 	 */
 	let datumDan;
 	onMount(() => {
+
+        function handleTopBorder() {
+            topBorder = window.scrollY > window.innerHeight;
+        }
 		window.addEventListener('scroll', handleTopBorder);
 
 		inView(marija, () => {

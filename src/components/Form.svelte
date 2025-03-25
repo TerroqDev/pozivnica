@@ -14,8 +14,15 @@
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
 	let potvrdaDiv;
+    /**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
     let brojDiv;
+    /**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
     let porukaDiv;
+    let callToAction;
 
 	onMount(() => {
 		inView(imeDiv, () => {
@@ -32,6 +39,9 @@
 		});
 		inView(porukaDiv, () => {
 			animate(porukaDiv, { opacity: [0, 100], y: [10, 0] }, { duration: 1.2, easing: 'ease-in', delay: 0.7 });
+		});
+		inView(callToAction, () => {
+			animate(callToAction, { opacity: [0, 100], y: [10, 0] }, { duration: 1.2, easing: 'ease-in', delay: 0.8 });
 		});
 	});
 </script>
@@ -85,7 +95,7 @@
             class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0"
         ></textarea>
     </div>
-	<div class="flex justify-center pt-8">
+	<div bind:this={callToAction} class="flex justify-center pt-8">
 		<button
 			class="border-2 border-gray-600 px-4 py-2 text-xl font-semibold uppercase tracking-widest text-gray-700"
 			>Posalji</button
