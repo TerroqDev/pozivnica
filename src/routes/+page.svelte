@@ -6,6 +6,15 @@
 	import ContactHandle from '../components/ContactHandle.svelte';
 
 	let topBorder = false;
+	/**
+	 * @type {any}
+	 */
+	let scrollYPosition;
+
+	$: console.log(scrollYPosition);
+	function handleTopBorder() {
+		topBorder = event.currentTarget.scrollY > window.innerHeight;
+	}
 
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
@@ -41,11 +50,6 @@
 	 */
 	let datumDan;
 	onMount(() => {
-		const handleTopBorder = () => {
-			topBorder = window.scrollY > window.innerHeight;
-		};
-		window.addEventListener('scroll', handleTopBorder);
-
 		inView(marija, () => {
 			animate(marija, { opacity: [0, 100], y: [100, 0] }, { duration: 2, easing: 'ease-in' });
 		});
@@ -85,6 +89,7 @@
 	});
 </script>
 
+<svelte:window on:scroll={handleTopBorder} />
 <div class="bg-transparent">
 	<div
 		class:h-0={topBorder}
