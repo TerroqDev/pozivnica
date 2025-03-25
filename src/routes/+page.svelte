@@ -81,7 +81,7 @@
 
 <div class="bg-transparent">
 	<div
-		class="fixed top-0 z-10 h-16 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
+		class="fixed top-0 z-10 h-4 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
 	></div>
 </div>
 
