@@ -11,11 +11,11 @@
 	 */
     let y;
 
-	function handleTopBorder(y) {
-		topBorder = y > window.innerHeight;
-	}
+	<!-- function handleTopBorder(y) { -->
+	<!-- 	topBorder = y > window.innerHeight; -->
+	<!-- } -->
 
-    $: handleTopBorder(y);
+    <!-- $: handleTopBorder(y); -->
 
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
