@@ -78,18 +78,25 @@
 	});
 </script>
 
+
+<div class=" bg-transparent">
+	<div
+		class="fixed top-0 z-50 h-24 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
+	></div>
+</div>
+
 <div
 	class="relative flex min-h-screen flex-col bg-[url('https://images.unsplash.com/photo-1570579984759-0915125b99bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center"
 >
-	<div class="sticky top-12 z-20 ml-8 flex bg-transparent pt-8 font-noto text-6xl text-gray-50">
-		<h1 class="flex-wrap border-r-2 border-gray-50 pb-2 pr-4">M</h1>
+	<div class="sticky top-12 z-20 ml-8 flex bg-transparent pt-8 font-noto text-5xl text-white">
+		<h1 class="flex-wrap border-r-2 border-white pb-2 pr-4">M</h1>
 		<h1 class="pb-2 pl-4">V</h1>
 	</div>
 </div>
 
-<div class="relative -mt-16 bg-transparent">
+<div class="relative -mt-24 bg-transparent">
 	<div
-		class="h-16 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%284%29-junRLKTvpDBwHpNHTxLavxctPsMbOt.png')] bg-cover"
+		class="h-24 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%284%29-junRLKTvpDBwHpNHTxLavxctPsMbOt.png')] bg-cover"
 	></div>
 </div>
 
