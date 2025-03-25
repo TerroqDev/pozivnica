@@ -84,9 +84,6 @@
 		});
 	});
 
-    onDestroy(() => {
-        removeEventListener("scroll", handleTopBorder);
-    })
 </script>
 
 
