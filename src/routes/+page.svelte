@@ -42,7 +42,7 @@
 	let datumDan;
 	onMount(() => {
 		const handleTopBorder = () => {
-			scrolled = window.scrollY > window.innerHeight;
+			topBorder = window.scrollY > window.innerHeight;
 		};
 		window.addEventListener('scroll', handleTopBorder);
 
