@@ -1,6 +1,7 @@
 <script>
 	import { animate, inView } from 'motion';
 	import { onMount } from 'svelte';
+	import Divider from '../components/Divider.svelte';
 
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
@@ -21,14 +22,6 @@
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
-	let firstLeftDivider;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let firstRightDivider;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
 	let okupljanje;
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
@@ -43,25 +36,6 @@
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
 	let datumDan;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let datumMjesec;
-
-	let mjeseci = [
-		'Sijecanj',
-		'Veljaca',
-		'Ozujak',
-		'Travanj',
-		'Svibanj',
-		'Lipanj',
-		'Srpanj',
-		'Listopad',
-		'Rujan'
-	];
-	let currentMonth = mjeseci[0];
-	let stopMonth = 'Rujan';
-	let index = 0;
 	onMount(() => {
 		inView(marija, () => {
 			animate(marija, { opacity: [0, 100], y: [100, 0] }, { duration: 2, easing: 'ease-in' });
@@ -79,14 +53,6 @@
 			animate(datum, { opacity: [0, 100] }, { duration: 1, easing: 'ease-in', delay: 1.5 });
 		});
 
-		inView(firstLeftDivider, () => {
-			animate(firstLeftDivider, { scaleX: [0, 1] }, { duration: 1.3, easing: 'ease-in' });
-		});
-
-		inView(firstRightDivider, () => {
-			animate(firstRightDivider, { scaleX: [0, 1] }, { duration: 1.3, easing: 'ease-in' });
-		});
-
 		inView(okupljanje, () => {
 			animate(okupljanje, { opacity: [0, 1], x: [-100, 0] }, { duration: 1, easing: 'ease-in' });
 		});
@@ -100,7 +66,7 @@
 		});
 
 		inView(datumDan, () => {
-			animate(1, 25, {
+			animate(1, 26, {
 				duration: 2,
 				delay: 2.5,
 				ease: 'circOut',
@@ -123,36 +89,12 @@
 	<h1 bind:this={marija} class="pt-8 font-bold uppercase tracking-widest">Marija Matijevic</h1>
 	<h1 bind:this={and} class="py-2 font-lavishly text-5xl">and</h1>
 	<h1 bind:this={valentin} class="font-bold uppercase tracking-widest">Valentin Vareskic</h1>
-	<h1 bind:this={datum} class="pt-4 uppercase">
-		<span bind:this={datumDan}>26</span>. <span bind:this={datumMjesec}>Sijecanj</span> 2025.
+	<h1 bind:this={datum} class="pt-16 uppercase">
+		<span bind:this={datumDan}>26</span>. <span>Rujan</span> 2025.
 	</h1>
-	<div class="flex items-center justify-center gap-2 pb-8 pt-16">
-		<div bind:this={firstLeftDivider} class="h-[0.8px] w-20 origin-right bg-gray-600"></div>
-		<div class="">
-			<svg
-				width="17.5"
-				height="19.25"
-				viewBox="0 0 70 77"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					d="M34.6031 31.0001C32.1092 18.6496 29.407 4.46732 14.6031 2C6.76537 0.693718 2.66023 6.00006 1.16022 12.5001C-1.33977 36.0001 26.1031 66.0001 35.6031 75.5001"
-					stroke="black"
-					stroke-width="1.9"
-					stroke-linecap="round"
-				/>
-				<path
-					d="M34.6031 31.0349C37.0969 18.6844 39.9963 3.65921 54.8002 1.19189C62.6379 -0.114395 66.7273 5.44354 68.2274 11.9436C70.7273 35.4436 45.1031 66 35.603 75.5"
-					stroke="black"
-					stroke-width="1.9"
-					stroke-linecap="round"
-				/>
-			</svg>
-		</div>
-		<div bind:this={firstRightDivider} class="h-[0.8px] w-20 origin-left bg-gray-600"></div>
-	</div>
 </div>
+
+<Divider />
 
 <div class="px-4 text-center text-lg text-gray-600 md:text-4xl">
 	<div bind:this={okupljanje}>
@@ -169,38 +111,13 @@
 	</div>
 </div>
 
-<div class="flex items-center justify-center gap-2 pb-8 pt-16">
-	<div class="h-[0.8px] w-20 origin-right bg-gray-600"></div>
-	<div class="">
-		<svg
-			width="17.5"
-			height="19.25"
-			viewBox="0 0 70 77"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M34.6031 31.0001C32.1092 18.6496 29.407 4.46732 14.6031 2C6.76537 0.693718 2.66023 6.00006 1.16022 12.5001C-1.33977 36.0001 26.1031 66.0001 35.6031 75.5001"
-				stroke="black"
-				stroke-width="1.9"
-				stroke-linecap="round"
-			/>
-			<path
-				d="M34.6031 31.0349C37.0969 18.6844 39.9963 3.65921 54.8002 1.19189C62.6379 -0.114395 66.7273 5.44354 68.2274 11.9436C70.7273 35.4436 45.1031 66 35.603 75.5"
-				stroke="black"
-				stroke-width="1.9"
-				stroke-linecap="round"
-			/>
-		</svg>
-	</div>
-	<div class="h-[0.8px] w-20 bg-gray-600"></div>
-</div>
+<Divider />
 
 <div class="px-2 pt-8 text-center font-noto text-gray-600">
 	<h1 class="text-xl">
 		Molimo potvrdite svoj dolazak do 10.08.2025. putem forme ili nas kontaktirajte.
 	</h1>
-	<div class="flex items-center justify-center pt-4">
+	<div class="flex items-center justify-center pt-12 font-extrabold">
 		<h1 class="align-middle">Marija +385 95 820 3771</h1>
 		<div class="h-full w-8">
 			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +135,7 @@
 		</div>
 	</div>
 
-	<div class="flex items-center justify-center">
+	<div class="flex items-center justify-center font-extrabold">
 		<h1 class="align-middle">Valentin +385 95 820 3771</h1>
 		<div class="h-full w-8">
 			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -237,32 +154,7 @@
 	</div>
 </div>
 
-<div class="flex items-center justify-center gap-2 pb-8 pt-16">
-	<div bind:this={firstLeftDivider} class="h-[0.8px] w-20 origin-right bg-gray-600"></div>
-	<div class="">
-		<svg
-			width="17.5"
-			height="19.25"
-			viewBox="0 0 70 77"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<path
-				d="M34.6031 31.0001C32.1092 18.6496 29.407 4.46732 14.6031 2C6.76537 0.693718 2.66023 6.00006 1.16022 12.5001C-1.33977 36.0001 26.1031 66.0001 35.6031 75.5001"
-				stroke="black"
-				stroke-width="1.9"
-				stroke-linecap="round"
-			/>
-			<path
-				d="M34.6031 31.0349C37.0969 18.6844 39.9963 3.65921 54.8002 1.19189C62.6379 -0.114395 66.7273 5.44354 68.2274 11.9436C70.7273 35.4436 45.1031 66 35.603 75.5"
-				stroke="black"
-				stroke-width="1.9"
-				stroke-linecap="round"
-			/>
-		</svg>
-	</div>
-	<div bind:this={firstRightDivider} class="h-[0.8px] w-20 origin-left bg-gray-600"></div>
-</div>
+<Divider />
 
 <div class="flex flex-col px-8 pt-8">
 	<label for="ime" class="text-gray-700">Ime</label>
@@ -270,14 +162,14 @@
 		type="text"
 		id="ime"
 		name="ime"
-		class="border-0 border-b-2 font-noto text-gray-600 px-0 focus:ring-0"
+		class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0"
 	/>
 	<label for="prezime" class="pt-4 text-gray-700">Prezime</label>
 	<input
 		type="text"
 		id="prezime"
 		name="prezime"
-		class="border-0 border-b-2 font-noto text-gray-600 px-0 focus:ring-0"
+		class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0"
 	/>
 	<label for="dolazak" class="pt-4 text-gray-700">Potvrda dolaska</label>
 	<select id="dolazak" class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0">
@@ -300,14 +192,17 @@
 	<textarea
 		id="poruka"
 		name="poruka"
-        rows="3"
-		class="border-0 border-b-2 font-noto text-gray-600 focus:ring-0 px-0"
+		rows="3"
+		class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0"
 	></textarea>
-    <div class="flex justify-center pt-8">
-        <button class="border-2 border-gray-600 uppercase text-gray-700 px-4 py-2 font-semibold font-noto text-xl tracking-widest">Posalji</button>
-    </div>
+	<div class="flex justify-center pt-8">
+		<button
+			class="border-2 border-gray-600 px-4 py-2 text-xl font-semibold uppercase tracking-widest text-gray-700"
+			>Posalji</button
+		>
+	</div>
 </div>
 
-<div class="px-8 py-8 text-center text-xl font-extrabold text-gray-600">
+<div class="px-8 py-8 text-center font-noto text-xl font-extrabold text-gray-600">
 	<h1>Veselimo se vasem dolasku!</h1>
 </div>
