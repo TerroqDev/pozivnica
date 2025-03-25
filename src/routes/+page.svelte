@@ -41,10 +41,9 @@
 	 */
 	let datumDan;
 	onMount(() => {
-
-        function handleTopBorder() {
-            topBorder = window.scrollY > window.innerHeight;
-        }
+		const handleTopBorder = () => {
+			scrolled = window.scrollY > window.innerHeight;
+		};
 		window.addEventListener('scroll', handleTopBorder);
 
 		inView(marija, () => {
