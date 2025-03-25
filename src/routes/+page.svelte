@@ -21,24 +21,47 @@
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
-    let firstLeftDivider;
+	let firstLeftDivider;
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
-    let firstRightDivider;
+	let firstRightDivider;
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
-    let okupljanje;
+	let okupljanje;
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
-    let vjencanje;
+	let vjencanje;
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
 	 */
-    let sala;
+	let sala;
 
+	/**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
+	let datumDan;
+	/**
+	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
+	 */
+	let datumMjesec;
+
+	let mjeseci = [
+		'Sijecanj',
+		'Veljaca',
+		'Ozujak',
+		'Travanj',
+		'Svibanj',
+		'Lipanj',
+		'Srpanj',
+		'Listopad',
+		'Rujan'
+	];
+	let currentMonth = mjeseci[0];
+	let stopMonth = 'Rujan';
+	let index = 0;
 	onMount(() => {
 		inView(marija, () => {
 			animate(marija, { opacity: [0, 100], y: [100, 0] }, { duration: 2, easing: 'ease-in' });
@@ -53,66 +76,58 @@
 		});
 
 		inView(datum, () => {
-			animate(
-				datum,
-				{ opacity: [0, 100], y: [100, 0] },
-				{ duration: 2, easing: 'ease-in', delay: 1 }
-			);
+			animate(datum, { opacity: [0, 100] }, { duration: 1, easing: 'ease-in', delay: 1.5 });
 		});
-        
-        inView(firstLeftDivider, () => {
-            animate(firstLeftDivider, 
-                { scaleX: [0, 1] },
-                { duration: 1.3, easing: 'ease-in'}
-            )
-        });
 
-        inView(firstRightDivider, () => {
-            animate(firstRightDivider, 
-                { scaleX: [0, 1] },
-                { duration: 1.3, easing: 'ease-in'}
-            )
-        });
+		inView(firstLeftDivider, () => {
+			animate(firstLeftDivider, { scaleX: [0, 1] }, { duration: 1.3, easing: 'ease-in' });
+		});
 
-        inView(okupljanje, () => {
-            animate(okupljanje,
-                { opacity: [0, 1], x: [-100, 0] },
-                { duration: 1, easing: 'ease-in'}
-            );
-        })
+		inView(firstRightDivider, () => {
+			animate(firstRightDivider, { scaleX: [0, 1] }, { duration: 1.3, easing: 'ease-in' });
+		});
 
-        inView(vjencanje, () => {
-            animate(vjencanje,
-                { opacity: [0, 1], x: [100, 0] },
-                { duration: 1, easing: 'ease-in'}
-            );
-        })
+		inView(okupljanje, () => {
+			animate(okupljanje, { opacity: [0, 1], x: [-100, 0] }, { duration: 1, easing: 'ease-in' });
+		});
 
-        inView(sala, () => {
-            animate(sala,
-                { opacity: [0, 1], x: [-100, 0] },
-                { duration: 1, easing: 'ease-in'}
-            );
-        })
+		inView(vjencanje, () => {
+			animate(vjencanje, { opacity: [0, 1], x: [100, 0] }, { duration: 1, easing: 'ease-in' });
+		});
+
+		inView(sala, () => {
+			animate(sala, { opacity: [0, 1], x: [-100, 0] }, { duration: 1, easing: 'ease-in' });
+		});
+
+		inView(datumDan, () => {
+			animate(1, 25, {
+				duration: 2,
+				delay: 2.5,
+				ease: 'circOut',
+				onUpdate: (latest) => (datumDan.innerHTML = Math.round(latest))
+			});
+		});
 	});
 </script>
 
 <div
-  class="relative flex min-h-screen flex-col bg-[url('https://images.unsplash.com/photo-1570579984759-0915125b99bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-fixed bg-center bg-cover"
+	class="relative flex min-h-screen flex-col bg-[url('https://images.unsplash.com/photo-1570579984759-0915125b99bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center"
 >
-<div class="sticky top-12 ml-8 z-20 bg-transparent flex pt-8 font-noto text-6xl text-gray-50">
-    <h1 class="flex-wrap border-r-2 border-gray-50 pb-2 pr-4">M</h1>
-    <h1 class="pb-2 pl-4">V</h1>
-  </div>
+	<div class="sticky top-12 z-20 ml-8 flex bg-transparent pt-8 font-noto text-6xl text-gray-50">
+		<h1 class="flex-wrap border-r-2 border-gray-50 pb-2 pr-4">M</h1>
+		<h1 class="pb-2 pl-4">V</h1>
+	</div>
 </div>
 
 <div class="text-center font-noto text-2xl text-gray-600 md:text-4xl">
-	<h1 bind:this={marija} class="pt-8 uppercase tracking-widest">Marija Matijevic</h1>
+	<h1 bind:this={marija} class="pt-8 font-bold uppercase tracking-widest">Marija Matijevic</h1>
 	<h1 bind:this={and} class="py-2 font-lavishly text-5xl">and</h1>
-	<h1 bind:this={valentin} class="uppercase tracking-widest">Valentin Vareskic</h1>
-	<h1 bind:this={datum} class="pt-4 uppercase">26. Rujan 2025.</h1>
+	<h1 bind:this={valentin} class="font-bold uppercase tracking-widest">Valentin Vareskic</h1>
+	<h1 bind:this={datum} class="pt-4 uppercase">
+		<span bind:this={datumDan}>26</span>. <span bind:this={datumMjesec}>Sijecanj</span> 2025.
+	</h1>
 	<div class="flex items-center justify-center gap-2 pb-8 pt-16">
-		<div bind:this={firstLeftDivider} class="h-[0.8px] w-20 bg-gray-600 origin-right"></div>
+		<div bind:this={firstLeftDivider} class="h-[0.8px] w-20 origin-right bg-gray-600"></div>
 		<div class="">
 			<svg
 				width="17.5"
@@ -135,27 +150,27 @@
 				/>
 			</svg>
 		</div>
-		<div bind:this={firstRightDivider} class="h-[0.8px] w-20 bg-gray-600 origin-left"></div>
+		<div bind:this={firstRightDivider} class="h-[0.8px] w-20 origin-left bg-gray-600"></div>
 	</div>
 </div>
 
-<div class="text-center text-lg text-gray-600 md:text-4xl px-4">
-    <div bind:this={okupljanje}>
-	<h1 class="pt-4 font-lavishly text-4xl tracking-wider">okupljanje u 16 : 30</h1>
-	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
-    </div>
-    <div bind:this={vjencanje}>
-	<h1 class="pt-16 font-lavishly text-4xl tracking-wider">vjencanje u 17 : 00</h1>
-	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
-    </div>
-    <div bind:this={sala}>
-	<h1 class="pt-16 font-lavishly text-4xl tracking-wider">svecana vecera u 19 : 00</h1>
-	<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Mansion sala za vjencanja, Zagreb</h1>
-    </div>
+<div class="px-4 text-center text-lg text-gray-600 md:text-4xl">
+	<div bind:this={okupljanje}>
+		<h1 class="pt-4 font-lavishly text-4xl tracking-wider">okupljanje u 16 : 30</h1>
+		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
+	</div>
+	<div bind:this={vjencanje}>
+		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">vjencanje u 17 : 00</h1>
+		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
+	</div>
+	<div bind:this={sala}>
+		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">svecana vecera u 19 : 00</h1>
+		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Mansion sala za vjencanja, Zagreb</h1>
+	</div>
 </div>
 
 <div class="flex items-center justify-center gap-2 pb-8 pt-16">
-	<div class="h-[0.8px] w-20 bg-gray-600 origin-right"></div>
+	<div class="h-[0.8px] w-20 origin-right bg-gray-600"></div>
 	<div class="">
 		<svg
 			width="17.5"
@@ -182,8 +197,10 @@
 </div>
 
 <div class="px-2 pt-8 text-center font-noto text-gray-600">
-	<h1 class="text-xl">Molimo potvrdite svoj dolazak do 10.08.2025.</h1>
-	<div class="flex justify-center items-center pt-4">
+	<h1 class="text-xl">
+		Molimo potvrdite svoj dolazak do 10.08.2025. putem forme ili nas kontaktirajte.
+	</h1>
+	<div class="flex items-center justify-center pt-4">
 		<h1 class="align-middle">Marija +385 95 820 3771</h1>
 		<div class="h-full w-8">
 			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +218,7 @@
 		</div>
 	</div>
 
-	<div class="flex justify-center items-center">
+	<div class="flex items-center justify-center">
 		<h1 class="align-middle">Valentin +385 95 820 3771</h1>
 		<div class="h-full w-8">
 			<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -218,4 +235,41 @@
 			>
 		</div>
 	</div>
+</div>
+<div class="flex flex-col px-8 pt-8">
+	<label for="ime" class="text-gray-700">Ime</label>
+	<input
+		type="text"
+		id="ime"
+		name="ime"
+		class="border-0 border-b-2 font-noto text-gray-600 focus:ring-0"
+	/>
+	<label for="prezime" class="pt-2 text-gray-700">Prezime</label>
+	<input
+		type="text"
+		id="prezime"
+		name="prezime"
+		class="border-0 border-b-2 font-noto text-gray-600 focus:ring-0"
+	/>
+	<label for="dolazak" class="pt-2 text-gray-700">Potvrda dolaska</label>
+	<select id="dolazak" class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0">
+		<option selected>Odaberite</option>
+		<option value="da">Da</option>
+		<option value="ne">Na</option>
+	</select>
+	<label for="brojgostiju" class="pt-2 text-gray-700">Broj gostiju</label>
+	<select id="brojgostiju" class="border-0 border-b-2 px-0 font-noto text-gray-600 focus:ring-0">
+		<option selected>Odaberite</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+	</select>
+</div>
+
+<div class="px-8 py-8 text-center text-xl font-bold text-gray-600">
+	<h1>Veselimo se vasem dolasku!</h1>
 </div>
