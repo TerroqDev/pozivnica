@@ -6,15 +6,16 @@
 	import ContactHandle from '../components/ContactHandle.svelte';
 
 	let topBorder = false;
-	/**
+    /**
 	 * @type {any}
 	 */
-	let scrollYPosition;
+    let y;
 
-	$: console.log(scrollYPosition);
-	function handleTopBorder() {
-		topBorder = event.currentTarget.scrollY > window.innerHeight;
+	function handleTopBorder(y) {
+		topBorder = y > window.innerHeight;
 	}
+
+    $: handleTopBorder(y);
 
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
@@ -89,7 +90,7 @@
 	});
 </script>
 
-<svelte:window on:scroll={handleTopBorder} />
+<svelte:window bind:scrollY={y} />
 <div class="bg-transparent">
 	<div
 		class:h-0={topBorder}
