@@ -70,7 +70,7 @@
 	});
 </script>
 
-<div class="flex flex-col px-8 pt-8">
+<div class="flex flex-col px-8 pt-8 md:px-56 lg:px-80 xl:px-96">
 	<div bind:this={imeDiv} class="flex flex-col">
 		<label for="ime" class="text-gray-700">Ime</label>
 		<input
