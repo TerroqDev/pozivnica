@@ -120,9 +120,11 @@
 		></textarea>
 	</div>
 	<div bind:this={callToAction} class="flex justify-center pt-8">
-		<button
-			class="border-2 border-gray-600 px-4 py-2 text-xl font-semibold uppercase tracking-widest text-gray-700"
-			>Posalji</button
-		>
+        <button class="relative border-2 border-gray-600 px-4 py-2 text-xl font-semibold uppercase tracking-widest text-gray-700 transition-all duration-300 ease-in overflow-hidden 
+          before:absolute before:bottom-0 before:left-0 before:w-full before:h-0 before:bg-gray-600 before:transition-all before:duration-500 hover:before:h-full 
+          hover:text-gray-50">
+          <span class="relative z-10">Posalji</span>
+        </button>
 	</div>
+
 </div>
