@@ -93,12 +93,12 @@
 <svelte:window bind:outerHeight={z} bind:scrollY={y} />
 <div class={`${topBorder ? "hidden" : "block"}`}>
 	<div
-		class="fixed top-0 z-10 h-10 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
+		class="fixed top-0 z-10 h-10 w-full  bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
 	></div>
 </div>
 
 <div
-	class="relative flex min-h-screen flex-col bg-[url('https://images.unsplash.com/photo-1570579984759-0915125b99bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-fixed bg-center"
+	class="relative flex min-h-screen flex-col bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/IMG_0283-Oa8HaUwqgwz5AH87VcXiWCPcPzLHk1.JPEG')]  bg-cover bg-fixed bg-center"
 >
 	<div class="sticky top-12 z-20 ml-8 flex bg-transparent pt-8 font-noto text-5xl text-white">
 		<h1 class="flex-wrap border-r-2 border-white pb-2 pr-4">M</h1>
