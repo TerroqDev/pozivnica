@@ -10,6 +10,13 @@
 	 * @type {any}
 	 */
     let y;
+    /**
+	 * @type {any}
+	 */
+    let z;
+
+    $: topBorder = y > z;
+    $: console.log(topBorder)
 
 	/**
 	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
@@ -84,10 +91,9 @@
 	});
 </script>
 
-<svelte:window bind:scrollY={y} />
-<div class="bg-transparent">
+<svelte:window bind:outerHeight={z} bind:scrollY={y} />
+<div class={`${topBorder ? "hidden" : "block"}`}>
 	<div
-		class:h-0={topBorder}
 		class="fixed top-0 z-10 h-10 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
 	></div>
 </div>
