@@ -98,7 +98,7 @@
 </div>
 
 <div
-	class="relative flex min-h-screen flex-col bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/IMG_5277-cayuDdw42zwwHPSUYfh1lEr4R5m1it.JPEG')] bg-cover bg-fixed "
+	class="relative flex min-h-screen flex-col bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/WhatsApp%20Image%202025-03-28%20at%2009.08.34_fc48a8d0-hcQWekHKwBUCGjiaY37LdKIRApmrvj.jpg')] bg-cover bg-center bg-fixed "
 >
 	<div class="sticky top-12 z-20 ml-8 flex bg-transparent pt-8 font-noto text-5xl text-white">
 		<h1 class="flex-wrap border-r-2 border-white pb-2 pr-4">M</h1>
