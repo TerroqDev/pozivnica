@@ -155,3 +155,4 @@
 <div class="px-8 py-8 text-center font-noto text-xl font-extrabold text-gray-600">
 	<h1>Veselimo se vašem dolasku!</h1>
 </div>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfYmfanb9_Mqg09QAmpht6c5WbE1z9VMNcZ4pI7HFoOLKOGw/viewform?embedded=true" width="640" height="1295" frameborder="0" marginheight="0" marginwidth="0">Učitavanje…</iframe>
