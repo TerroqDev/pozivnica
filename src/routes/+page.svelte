@@ -113,9 +113,9 @@
 </div>
 
 <div class="text-center font-noto text-2xl text-gray-600 md:text-4xl lg:pt-20">
-	<h1 bind:this={marija} class="pt-8 font-bold uppercase tracking-widest">Marija Matijevic</h1>
+	<h1 bind:this={marija} class="pt-8 font-bold uppercase tracking-widest">Marija Matijević</h1>
 	<h1 bind:this={and} class="py-2 font-lavishly text-5xl">and</h1>
-	<h1 bind:this={valentin} class="font-bold uppercase tracking-widest">Valentin Vareskic</h1>
+	<h1 bind:this={valentin} class="font-bold uppercase tracking-widest">Valentin Vareškić</h1>
 	<h1 bind:this={datum} class="pt-16 uppercase">
 		<span bind:this={datumDan}>26</span>. <span>Rujan</span> 2025.
 	</h1>
@@ -129,12 +129,12 @@
 		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
 	</div>
 	<div bind:this={vjencanje}>
-		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">vjencanje u 17 : 00</h1>
+		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">vjenčanje u 17 : 00</h1>
 		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
 	</div>
 	<div bind:this={sala}>
-		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">svecana vecera u 19 : 00</h1>
-		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Mansion sala za vjencanja, Zagreb</h1>
+		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">svečana večera u 19 : 00</h1>
+		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Mansion sala za vjenčanja, Zagreb</h1>
 	</div>
 </div>
 
@@ -153,5 +153,5 @@
 <Form />
 
 <div class="px-8 py-8 text-center font-noto text-xl font-extrabold text-gray-600">
-	<h1>Veselimo se vasem dolasku!</h1>
+	<h1>Veselimo se vašem dolasku!</h1>
 </div>
