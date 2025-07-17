@@ -9,9 +9,11 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				noto: ['Noto Serif', 'serif'],
-				roboto: ['Roboto', 'sans-serif'],
-				lavishly: ['Lavishly Yours', 'cursive']
+				cormorant: ['Cormorant Garamond', 'serif'],
+				imperial: ['Imperial Script', 'cursive'],
+                ms: ['Mrs Saint Delafield', 'cursive'],
+                samfhang: ["The Samfhang", "cursive"],
+                blosta: ["Blosta", "serif"]
 			}
 		}
 	},

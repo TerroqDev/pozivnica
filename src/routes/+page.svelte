@@ -1,9 +1,6 @@
 <script>
 	import { animate, inView } from 'motion';
 	import { onDestroy, onMount } from 'svelte';
-	import Divider from '../components/Divider.svelte';
-	import Form from '../components/Form.svelte';
-	import ContactHandle from '../components/ContactHandle.svelte';
 
 	let topBorder = false;
     /**
@@ -17,93 +14,20 @@
 
     $: topBorder = y > z;
 
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let marija;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let valentin;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let and;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let datum;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let okupljanje;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let vjencanje;
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let sala;
-
-	/**
-	 * @type {import("motion").MotionValue<string> | import("motion-dom").ElementOrSelector}
-	 */
-	let datumDan;
 	onMount(() => {
-		inView(marija, () => {
-			animate(marija, { opacity: [0, 100], y: [100, 0] }, { duration: 2, easing: 'ease-in' });
-		});
-
-		inView(and, () => {
-			animate(and, { opacity: [0, 100], y: [100, 0] }, { duration: 2, easing: 'ease-in' });
-		});
-
-		inView(valentin, () => {
-			animate(valentin, { opacity: [0, 100], y: [100, 0] }, { duration: 2, easing: 'ease-in' });
-		});
-
-		inView(datum, () => {
-			animate(datum, { opacity: [0, 100] }, { duration: 1, easing: 'ease-in', delay: 1.5 });
-		});
-
-		inView(okupljanje, () => {
-			animate(okupljanje, { opacity: [0, 1], x: [-100, 0] }, { duration: 1, easing: 'ease-in' });
-		});
-
-		inView(vjencanje, () => {
-			animate(vjencanje, { opacity: [0, 1], x: [100, 0] }, { duration: 1, easing: 'ease-in' });
-		});
-
-		inView(sala, () => {
-			animate(sala, { opacity: [0, 1], x: [-100, 0] }, { duration: 1, easing: 'ease-in' });
-		});
-
-		inView(datumDan, () => {
-			animate(1, 26, {
-				duration: 2,
-				delay: 2.5,
-				ease: 'circOut',
-				onUpdate: (latest) => (datumDan.innerHTML = Math.round(latest))
-			});
-		});
 	});
 </script>
 
 <svelte:window bind:outerHeight={z} bind:scrollY={y} />
 <div class={`${topBorder ? "hidden" : "block"}`}>
 	<div
-		class="fixed top-0 z-10 h-10 w-full  bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
+		class="fixed top-0 z-10 h-10 w-full bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/Mask%20group%289%29-aOO9vCR7TYJtLgaYIe5LbtubPdPQ2X.png')] bg-cover bg-bottom"
 	></div>
 </div>
 
 <div
-	class="relative flex h-screen w-screen flex-col bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/WhatsApp%20Image%202025-03-28%20at%2009.08.34_fc48a8d0-hcQWekHKwBUCGjiaY37LdKIRApmrvj.jpg')] bg-cover bg-center bg-fixed "
+	class="relative flex h-screen w-screen flex-col bg-[url('https://woop14abphufecql.public.blob.vercel-storage.com/pozivnica/pozvnica.png')] bg-cover bg-center md:bg-top bg-fixed"
 >
-	<div class="sticky top-12 z-20 ml-8 flex bg-transparent pt-8 font-noto text-5xl text-white">
-		<h1 class="flex-wrap border-r-2 border-white pb-2 pr-4">M</h1>
-		<h1 class="pb-2 pl-4">V</h1>
-	</div>
 </div>
 
 <div class="relative -mt-24 bg-transparent">
@@ -112,46 +36,40 @@
 	></div>
 </div>
 
-<div class="text-center font-noto text-2xl text-gray-600 md:text-4xl lg:pt-20">
-	<h1 bind:this={marija} class="pt-8 font-bold uppercase tracking-widest">Marija Matijevic</h1>
-	<h1 bind:this={and} class="py-2 font-lavishly text-5xl">and</h1>
-	<h1 bind:this={valentin} class="font-bold uppercase tracking-widest">Valentin Vareskic</h1>
-	<h1 bind:this={datum} class="pt-16 uppercase">
-		<span bind:this={datumDan}>26</span>. <span>Rujan</span> 2025.
-	</h1>
+<div class="text-center text-2xl text-text md:text-4xl lg:pt-20">
+    <h2 class="text-base md:text-lg font-cormorant font-normal px-20">Pozivamo vas da zajedno proslavimo dan našeg vjenčanja</h2>
 </div>
 
-<Divider />
-
-<div class="px-4 text-center text-lg text-gray-600 md:text-4xl">
-	<div bind:this={okupljanje}>
-		<h1 class="pt-4 font-lavishly text-4xl tracking-wider">okupljanje u 16 : 30</h1>
-		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
+<div class="relative text-center text-2xl text-text md:text-4xl py-5 lg:pt-20 ">
+	<div class="absolute leading-[0.7] whitespace-pre inset-0 flex flex-col items-center justify-center pointer-events-none select-none opacity-10 text-amber-500 text-[10rem] md:text-[12rem] font-blosta">
+		<span>
+26
+09
+25
+        </span>
 	</div>
-	<div bind:this={vjencanje}>
-		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">vjencanje u 17 : 00</h1>
-		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Crkva Sveta Mati Slobode, Jarun</h1>
-	</div>
-	<div bind:this={sala}>
-		<h1 class="pt-16 font-lavishly text-4xl tracking-wider">svecana vecera u 19 : 00</h1>
-		<h1 class="px-2 pt-2 font-noto uppercase tracking-wider">Mansion sala za vjencanja, Zagreb</h1>
-	</div>
+	<h1 class="pt-8 text-9xl font-samfhang z-10 relative">Marija</h1>
+	<h1 class="pt-8 text-9xl font-samfhang z-10 relative">i Valentin</h1>
 </div>
 
-<Divider />
-
-<div class="px-2 pt-8 text-center font-noto text-gray-600">
-	<h1 class="pb-12 text-xl">
-		Molimo potvrdite svoj dolazak do 10.08.2025. putem forme ili nas kontaktirajte.
-	</h1>
-	<ContactHandle name="Marija" number="958203771" />
-	<ContactHandle name="Valentin" number="978203771" />
+<div class="flex flex-col justify-center align-middle font-cormorant pt-8">
+    <p class="text-center">Okupljanje <span class="uppercase font-bold">• medeni bar •</span> 15:00</p>
+    <p class="text-center">Vjenčanje <span class="uppercase font-bold">• crkva sv. mati slobode •</span> 17:00</p>
+    <p class="text-center">Svečana večera <span class="uppercase font-bold">• mansion event resort •</span> 19:00</p>
 </div>
 
-<Divider />
-
-<Form />
-
-<div class="px-8 py-8 text-center font-noto text-xl font-extrabold text-gray-600">
-	<h1>Veselimo se vasem dolasku!</h1>
+<div class="pt-8 pb-4">
+    <h1 class="font-blosta text-5xl text-center">26.09.2025.</h1>
+    <p class="font-cormorant text-center pt-8">Molimo vas da svoj dolazak potvrdite do <span class="font-bold">6. rujna 2025.</span></p>
+    <div class="flex font-cormorant gap-8 justify-center pt-4">
+        <div class="flex flex-col">
+            <h2 class="text-center">Marija</h2>
+            <p>097 796 7644</p>
+        </div>
+        <div class="flex flex-col">
+            <h2 class="text-center">Valentin</h2>
+            <p>095 820 3771</p>
+        </div>
+    </div>
 </div>
+

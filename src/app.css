@@ -3,19 +3,27 @@
 @import 'tailwindcss/utilities';
 
 /* ---------- Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Monsieur+La+Doulaise&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
 
 @theme {
-	--font-noto: 'Noto Serif', serif;
-	--font-roboto: 'Roboto', sans-serif;
-	--font-lavishly: 'Lavishly Yours', cursive;
+    --font-cormorant: "Cormorant Garamond", serif;
+    --font-imperial: "Imperial Script", cursive;
+    --font-ms: "Mrs Saint Delafield", cursive;
+    --font-samfhang: "The Samfhang", cursive;
+    --font-blosta: "Blosta", serif;
+    --color-text: #0d0a07;
 }
 
 @font-face {
-	font-family: 'Brittany Signature'; /* Use the same name as in Tailwind config */
-	src: local('Brittany Signature'), local('Brittany Signature');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "The Samfhang";
+  src: url("/fonts/the_samfhang.ttf") format("truetype");
+  font-style: cursive;
+}
+
+@font-face {
+  font-family: "Blosta";
+  src: url("/fonts/Blosta.otf") format("truetype");
+  font-style: serif;
 }
