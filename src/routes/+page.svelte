@@ -67,7 +67,7 @@
         })
 
         inView(datumZlatni, () => {
-            animate(datumZlatni, { opacity: [0, 1]}, {duration: 3.7, easing: "ease-in", delay: 0.3})
+            animate(datumZlatni, { opacity: [0, 1]}, {duration: 2, easing: "ease-in", delay: 0.3})
         })
 
         inView(okupljanje, () => {
