@@ -134,13 +134,13 @@
     </h1>
 </div>
 
-<div class="flex flex-col justify-center align-middle font-cormorant pt-8">
-    <p bind:this={okupljanje} class="text-center">Okupljanje <span class="uppercase font-bold">• medeni bar •</span> 15:00</p>
-    <p bind:this={sala} class="text-center">Vjenčanje <span class="uppercase font-bold">• crkva sv. mati slobode •</span> 17:00</p>
-    <p bind:this={vjencanje} class="text-center">Svečana večera <span class="uppercase font-bold">• mansion event resort •</span> 19:00</p>
+<div class="flex flex-col justify-center align-middle font-cormorant pt-8 md:text-lg">
+    <p bind:this={okupljanje} class="text-center">Okupljanje • <a href="https://maps.app.goo.gl/eUArcVZvhBisDjgC7" target="_blank" class="uppercase font-bold underline"> medeni bar </a> • 15:00</p>
+    <p bind:this={sala} class="text-center">Vjenčanje • <a href="https://maps.app.goo.gl/ubuAsWjCJLcpMbn66" target="_blank" class="uppercase font-bold underline"> crkva sv. mati slobode </a> • 17:00</p>
+    <p bind:this={vjencanje} class="text-center">Svečana večera • <a href="https://maps.app.goo.gl/7BuHFSkusi9FHwxn9" target="_blank" class="uppercase font-bold underline">mansion event resort </a> • 19:00</p>
 </div>
 
-<div class="pt-8 pb-4">
+<div class="pt-8 pb-4 md:text-lg">
     <h1 bind:this={datumGlavni} class="font-blosta text-5xl text-center">26.09.2025.</h1>
     <p bind:this={potvrda} class="font-cormorant text-center pt-8">Molimo vas da svoj dolazak potvrdite do <span class="font-bold">6. rujna 2025.</span></p>
     <div class="flex font-cormorant gap-8 justify-center pt-4">
